@@ -76,7 +76,7 @@ async def send_group_id(message: types.Message):
         return
     
     group_id = message.chat.id
-    print(f"ID вашей группы: {group_id}")
+    print(f"You group id: {group_id}")
 
 
 @router.message(Command("members"))
@@ -120,7 +120,7 @@ async def proccess_message_handler(message: types.Message, state: FSMContext):
         await state.clear()
         return await message.reply("Message can not be empty")
     
-    print(f"{username} отправил: {anonym_message}")
+    print(f"{username} sent: {anonym_message}")
     
     await bot.send_message(GROUP_ID, f"Your anonymous message:\n\n{anonym_message}")
     await message.reply("Message sent anonymously")
